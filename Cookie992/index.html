@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Fairytale Land-EverWorld | El mundo mágico de fusión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel='icon' href='/src/icons/logo.png' type='image/x-icon'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .magic-glow {
+            box-shadow: 0 0 15px rgba(0, 147, 156, 0.5), 0 0 30px rgba(255, 121, 138, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .magic-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 147, 156, 0.7), 0 0 40px rgba(255, 121, 138, 0.5);
+            transform: translateY(-3px);
+        }
+
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            filter: brightness(110%);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #ff798a;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+
+
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                z-index: 50;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white bg-opacity-95 shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <!-- Logo and site name -->
+                <a href="/" class="flex items-center space-x-3">
+                    <img src="/src/icons/logo.png" alt="Logo de Merge Fairytale Land" class="h-12 w-12 rounded-full object-cover magic-glow">
+                    <span class="text-xl font-bold text-[#00939c] hidden md:block">Merge Fairytale Land-EverWorld</span>
+                    <span class="text-xl font-bold text-[#00939c] block md:hidden">MFL-EverWorld</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Inicio</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Sobre el Juego</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Características</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Gameplay</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Galería</a>
+                    <a href="/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Descargar</a>
+                    <a href="/About-us/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Sobre nosotros</a>
+                    <a href="/contacto/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Contacto</a>
+                </div>
+
+
+
+            </nav>
+
+
+        </div>
+    </header>
+
+    <style>
+        /* Estilos generales */
+        .cookie-container {
+            font-family: 'Quicksand', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #333;
+        }
+
+        .cookie-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 6rem;
+        }
+
+        .cookie-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #00939c, #ff798a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .cookie-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .cookie-section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #00939c;
+        }
+
+        .cookie-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .cookie-section:nth-child(even) {
+            border-left: 4px solid #ff798a;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #00939c;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cookie-section:nth-child(even) .section-title {
+            color: #ff798a;
+        }
+
+        .section-title i {
+            font-size: 1.5rem;
+        }
+
+        .cookie-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .cookie-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .cookie-content a {
+            color: #00939c;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .cookie-content a:hover {
+            color: #ff798a;
+        }
+
+        .cookie-content a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #ff798a;
+            transition: width 0.3s;
+        }
+
+        .cookie-content a:hover::after {
+            width: 100%;
+        }
+
+        .cookie-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .cookie-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .cookie-table th {
+            background-color: #00939c;
+            color: white;
+            text-align: left;
+            padding: 1rem;
+        }
+
+        .cookie-table tr:nth-child(even) {
+            background-color: rgba(0, 147, 156, 0.05);
+        }
+
+        .cookie-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .cookie-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(to right, #00939c, #ff798a);
+            color: white;
+            font-weight: 600;
+            border-radius: 30px;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .magic-glow {
+            box-shadow: 0 0 15px rgba(0, 147, 156, 0.3), 0 0 30px rgba(255, 121, 138, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-title {
+                font-size: 2.2rem;
+            }
+
+            .cookie-section {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .cookie-content {
+                font-size: 1rem;
+            }
+
+            .cookie-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+
+    <section class="cookie-container">
+        <div class="cookie-header">
+            <h1 class="cookie-title">Política de Cookies</h1>
+            <p class="cookie-subtitle">En esta Política de Cookies te explicamos cómo utilizamos las cookies y tecnologías similares en nuestro sitio web para mejorar tu experiencia de navegación.</p>
+        </div>
+
+        <div class="cookie-section magic-glow">
+            <h2 class="section-title">
+                <i>🍪</i>
+                ¿Qué son las Cookies?
+            </h2>
+            <div class="cookie-content">
+                <p>Las cookies son pequeños archivos de texto que los sitios web colocan en tu dispositivo (ordenador, tablet o móvil) cuando los visitas. Se utilizan ampliamente para hacer que los sitios web funcionen de manera más eficiente, proporcionar información a los propietarios del sitio y, entre otras cosas, permitir la personalización de la experiencia de navegación.</p>
+                <p>Las cookies pueden ser "persistentes" o "de sesión". Las cookies persistentes permanecen en tu dispositivo durante el período especificado en la cookie. Se activan cada vez que visitas el sitio web que creó esa cookie en particular. Las cookies de sesión se eliminan cuando cierras tu navegador.</p>
+            </div>
+        </div>
+
+        <div class="cookie-section magic-glow">
+            <h2 class="section-title">
+                <i>🔍</i>
+                ¿Cómo Utilizamos las Cookies?
+            </h2>
+            <div class="cookie-content">
+                <p>En Merge Fairytale Land-EverWorld utilizamos cookies por varias razones. Algunas cookies son necesarias para el funcionamiento técnico de nuestro sitio web, y las llamamos cookies "esenciales" o "estrictamente necesarias". Otras cookies nos permiten rastrear y dirigir los intereses de nuestros usuarios para mejorar la experiencia en nuestro sitio. Los terceros sirven cookies a través de nuestro sitio web para publicidad, análisis y otras funciones.</p>
+                <p>En concreto, utilizamos cookies para los siguientes propósitos:</p>
+                <ul>
+                    <li><strong>Cookies estrictamente necesarias:</strong> Estas cookies son esenciales para que puedas moverte por el sitio web y utilizar sus funciones. Sin estas cookies, no se pueden proporcionar los servicios que has solicitado.</li>
+                    <li><strong>Cookies de rendimiento:</strong> Estas cookies recopilan información sobre cómo utilizas nuestro sitio web, por ejemplo, qué páginas visitas con más frecuencia y si encuentras errores en estas páginas. Estas cookies no recopilan información que te identifique directamente. Toda la información que recopilan es agregada y, por lo tanto, anónima.</li>
+                    <li><strong>Cookies de funcionalidad:</strong> Estas cookies permiten que nuestro sitio web recuerde las elecciones que haces (como tu nombre de usuario, idioma o la región en la que te encuentras) y proporciona funciones mejoradas y más personales. Estas cookies también se pueden utilizar para recordar los cambios que has realizado en el tamaño del texto, fuentes y otras partes de las páginas web que puedes personalizar.</li>
+                    <li><strong>Cookies de marketing y publicidad:</strong> Estas cookies se utilizan para mostrarte anuncios más relevantes para ti y tus intereses. También se utilizan para limitar el número de veces que ves un anuncio, así como para ayudar a medir la efectividad de una campaña publicitaria. Suelen ser colocadas por redes publicitarias con nuestro permiso. Recuerdan que has visitado un sitio web y esta información se comparte con otras organizaciones, como los anunciantes.</li>
+                    <li><strong>Cookies de redes sociales:</strong> Nuestro sitio puede tener funcionalidades de redes sociales, como botones de compartir en Facebook, Twitter y otros. Estas empresas pueden colocar cookies en tu dispositivo y recopilar información sobre tu actividad en nuestro sitio u otros sitios, para proporcionarte anuncios personalizados o crear perfiles sobre tus hábitos de navegación.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cookie-section magic-glow">
+            <h2 class="section-title">
+                <i>📊</i>
+                Cookies que Utilizamos
+            </h2>
+            <div class="cookie-content">
+                <p>A continuación, se muestra una lista detallada de las cookies que utilizamos en nuestro sitio web:</p>
+
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Propósito</th>
+                            <th>Duración</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>session_cookie</td>
+                            <td>Estrictamente necesaria</td>
+                            <td>Utilizada para mantener tu sesión abierta mientras navegas por nuestro sitio.</td>
+                            <td>Sesión</td>
+                        </tr>
+                        <tr>
+                            <td>aprenderd_cookie_consent</td>
+                            <td>Estrictamente necesaria</td>
+                            <td>Guarda tus preferencias sobre el uso de cookies en nuestro sitio.</td>
+                            <td>1 año</td>
+                        </tr>
+                        <tr>
+                            <td>_ga</td>
+                            <td>Rendimiento (Google Analytics)</td>
+                            <td>Registra un identificador único que se utiliza para generar datos estadísticos sobre cómo utilizas el sitio web.</td>
+                            <td>2 años</td>
+                        </tr>
+                        <tr>
+                            <td>_gid</td>
+                            <td>Rendimiento (Google Analytics)</td>
+                            <td>Registra un identificador único que se utiliza para generar datos estadísticos sobre cómo utilizas el sitio web.</td>
+                            <td>24 horas</td>
+                        </tr>
+                        <tr>
+                            <td>_gat</td>
+                            <td>Rendimiento (Google Analytics)</td>
+                            <td>Se utiliza para limitar la velocidad de las solicitudes al servidor.</td>
+                            <td>1 minuto</td>
+                        </tr>
+                        <tr>
+                            <td>user_preferences</td>
+                            <td>Funcionalidad</td>
+                            <td>Recuerda tus preferencias de idioma y configuración de visualización.</td>
+                            <td>1 año</td>
+                        </tr>
+                        <tr>
+                            <td>_fbp</td>
+                            <td>Marketing (Facebook)</td>
+                            <td>Utilizada por Facebook para ofrecer una serie de productos publicitarios como ofertas en tiempo real de anunciantes terceros.</td>
+                            <td>3 meses</td>
+                        </tr>
+                        <tr>
+                            <td>ads_prefs</td>
+                            <td>Marketing</td>
+                            <td>Utilizada para recordar tus preferencias de publicidad personalizada.</td>
+                            <td>1 año</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="cookie-section magic-glow">
+            <h2 class="section-title">
+                <i>🛠️</i>
+                ¿Cómo Controlar las Cookies?
+            </h2>
+            <div class="cookie-content">
+                <p>Puedes controlar y/o eliminar las cookies según lo desees. Puedes eliminar todas las cookies que ya están en tu dispositivo y puedes configurar la mayoría de los navegadores para evitar que se coloquen. Sin embargo, si haces esto, es posible que tengas que ajustar manualmente algunas preferencias cada vez que visites un sitio y algunos servicios y funcionalidades pueden no funcionar.</p>
+
+                <p>Puedes configurar tu navegador para que rechace todas las cookies, o para que te muestre un mensaje cuando se envía una cookie. A continuación, te explicamos cómo puedes ajustar la configuración de las cookies en los navegadores más populares:</p>
+
+                <ul>
+                    <li><strong>Google Chrome:</strong> Menú → Configuración → Mostrar opciones avanzadas → Privacidad → Configuración de contenido. Para más información, puedes consultar la <a href="https://support.google.com/chrome/answer/95647?hl=es" target="_blank">ayuda de Google</a>.</li>
+
+                    <li><strong>Mozilla Firefox:</strong> Menú → Opciones → Privacidad → Historial → Configuración Personalizada. Para más información, puedes consultar la <a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank">ayuda de Mozilla</a>.</li>
+
+                    <li><strong>Internet Explorer:</strong> Menú → Opciones de Internet → Privacidad → Configuración. Para más información, puedes consultar la <a href="https://support.microsoft.com/es-es/help/17442/windows-internet-explorer-delete-manage-cookies" target="_blank">ayuda de Microsoft</a>.</li>
+
+                    <li><strong>Safari:</strong> Preferencias → Privacidad. Para más información, puedes consultar la <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank">ayuda de Apple</a>.</li>
+
+                    <li><strong>Opera:</strong> Configuración → Opciones → Avanzado → Cookies. Para más información, puedes consultar la <a href="https://help.opera.com/en/latest/web-preferences/#cookies" target="_blank">ayuda de Opera</a>.</li>
+
+                    <li><strong>Edge:</strong> Configuración → Configuración avanzada → Cookies. Para más información, puedes consultar la <a href="https://support.microsoft.com/es-es/help/4468242/microsoft-edge-browsing-data-and-privacy-microsoft-privacy" target="_blank">ayuda de Microsoft</a>.</li>
+                </ul>
+
+                <p>Además, si utilizas un dispositivo móvil, es posible que tengas que consultar el manual del dispositivo para obtener información sobre cómo gestionar las cookies.</p>
+            </div>
+        </div>
+
+        <div class="cookie-section magic-glow">
+            <h2 class="section-title">
+                <i>🔒</i>
+                Cookies de Terceros
+            </h2>
+            <div class="cookie-content">
+                <p>En algunos casos especiales, también utilizamos cookies proporcionadas por terceros de confianza. La siguiente sección detalla qué cookies de terceros podrías encontrar a través de este sitio.</p>
+
+                <ul>
+                    <li>Este sitio utiliza Google Analytics, que es una de las soluciones de análisis más extendidas y fiables en la web, para ayudarnos a entender cómo usas el sitio y las formas en que podemos mejorar tu experiencia. Estas cookies pueden rastrear cosas como el tiempo que pasas en el sitio y las páginas que visitas para que podamos seguir produciendo contenido atractivo. Para más información sobre las cookies de Google Analytics, consulta la <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage" target="_blank">página oficial de Google Analytics</a>.</li>
+
+                    <li>Las cookies de Google AdSense se utilizan para servir anuncios personalizados en nuestro sitio web. Se utilizan para mostrar anuncios relevantes y atractivos para el usuario individual y, por lo tanto, más valiosos para los editores y anunciantes terceros. Para más información sobre las cookies de Google AdSense, consulta la <a href="https://policies.google.com/technologies/ads" target="_blank">política de cookies de Google</a>.</li>
+
+                    <li>Utilizamos botones y/o complementos de redes sociales en este sitio que te permiten conectarte con tu red social de varias formas. Para que estos funcionen, las redes sociales (como Facebook, Twitter, Instagram) establecerán cookies a través de nuestro sitio que pueden usarse para mejorar tu perfil en su sitio o contribuir a los datos que tienen para diversos propósitos descritos en sus respectivas políticas de privacidad.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cookie-section magic-glow">
+            <h2 class="section-title">
+                <i>ℹ️</i>
+                Más Información
+            </h2>
+            <div class="cookie-content">
+                <p>Esperamos que esto haya aclarado las cosas para ti. Como se mencionó anteriormente, si hay algo que no estás seguro de si necesitas o no, generalmente es más seguro dejar las cookies habilitadas por si acaso interactúan con una de las funciones que utilizas en nuestro sitio. Sin embargo, si todavía estás buscando más información, puedes contactarnos a través de uno de nuestros métodos de contacto preferidos.</p>
+
+                <p>Al utilizar nuestro sitio web, aceptas nuestra Política de Cookies y nuestro uso de cookies como se describe en este documento. Si no estás de acuerdo con esta política, por favor configura tu navegador para rechazar cookies o abstente de usar nuestro sitio web.</p>
+            </div>
+        </div>
+
+        <div class="cookie-footer">
+            <p>Última actualización: Marzo 2025</p>
+            <a href="/" class="back-button">Volver a la página principal</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#00939c] text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <a href="/" class="flex items-center space-x-3">
+                        <img src="/src/icons/logo.png" alt="Logo de Merge Fairytale Land" class="h-12 w-12 rounded-full object-cover">
+                        <span class="text-xl font-bold">Merge Fairytale Land-EverWorld</span>
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="/Policy356/" class="hover:text-[#ff798a] transition-colors">Política de Privacidad</a>
+                    <a href="/Service347/" class="hover:text-[#ff798a] transition-colors">Términos de Uso</a>
+                    <a href="/Cookie992/" class="hover:text-[#ff798a] transition-colors">Política de Cookies</a>
+                    <a href="/contacto/" class="hover:text-[#ff798a] transition-colors">Contacto</a>
+                    <a href="/About-us/" class="hover:text-[#ff798a] transition-colors">Sobre nosotros</a>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-sm">Para todas las edades (3+). Adecuado para niños y adultos.</p>
+                <p class="mt-2">© 2025 Merge Fairytale Land-EverWorld. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for mobile menu -->
+    <script>
+        // Add magic hover effect to cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,121,138,0.1) 0%, rgba(0,147,156,0.05) 50%, rgba(255,255,255,0) 70%)`;
+            });
+
+            card.addEventListener('mouseleave', function() {
+                card.style.background = 'white';
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

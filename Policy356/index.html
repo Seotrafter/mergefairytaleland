@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Fairytale Land-EverWorld | El mundo mágico de fusión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel='icon' href='/src/icons/logo.png' type='image/x-icon'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .magic-glow {
+            box-shadow: 0 0 15px rgba(0, 147, 156, 0.5), 0 0 30px rgba(255, 121, 138, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .magic-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 147, 156, 0.7), 0 0 40px rgba(255, 121, 138, 0.5);
+            transform: translateY(-3px);
+        }
+
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            filter: brightness(110%);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #ff798a;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+
+
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                z-index: 50;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white bg-opacity-95 shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <!-- Logo and site name -->
+                <a href="/" class="flex items-center space-x-3">
+                    <img src="/src/icons/logo.png" alt="Logo de Merge Fairytale Land" class="h-12 w-12 rounded-full object-cover magic-glow">
+                    <span class="text-xl font-bold text-[#00939c] hidden md:block">Merge Fairytale Land-EverWorld</span>
+                    <span class="text-xl font-bold text-[#00939c] block md:hidden">MFL-EverWorld</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Inicio</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Sobre el Juego</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Características</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Gameplay</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Galería</a>
+                    <a href="/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Descargar</a>
+                    <a href="/About-us/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Sobre nosotros</a>
+                    <a href="/contacto/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Contacto</a>
+                </div>
+
+
+
+            </nav>
+
+
+        </div>
+    </header>
+
+    <style>
+        /* Estilos generales */
+        .privacy-container {
+            font-family: 'Quicksand', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #333;
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 6rem;
+        }
+
+        .privacy-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #00939c, #ff798a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .privacy-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .privacy-section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #00939c;
+        }
+
+        .privacy-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .privacy-section:nth-child(even) {
+            border-left: 4px solid #ff798a;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #00939c;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .privacy-section:nth-child(even) .section-title {
+            color: #ff798a;
+        }
+
+        .section-title i {
+            font-size: 1.5rem;
+        }
+
+        .privacy-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .privacy-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .privacy-content a {
+            color: #00939c;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .privacy-content a:hover {
+            color: #ff798a;
+        }
+
+        .privacy-content a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #ff798a;
+            transition: width 0.3s;
+        }
+
+        .privacy-content a:hover::after {
+            width: 100%;
+        }
+
+        .privacy-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(to right, #00939c, #ff798a);
+            color: white;
+            font-weight: 600;
+            border-radius: 30px;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .magic-glow {
+            box-shadow: 0 0 15px rgba(0, 147, 156, 0.3), 0 0 30px rgba(255, 121, 138, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .privacy-title {
+                font-size: 2.2rem;
+            }
+
+            .privacy-section {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .privacy-content {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <section class="privacy-container">
+        <div class="privacy-header">
+            <h1 class="privacy-title">Política de Privacidad</h1>
+            <p class="privacy-subtitle">En Merge Fairytale Land-EverWorld nos comprometemos a proteger tu privacidad y a brindarte una experiencia segura. A continuación encontrarás información detallada sobre cómo manejamos tus datos.</p>
+        </div>
+
+        <div class="privacy-section magic-glow">
+            <h2 class="section-title">
+                <i>📋</i>
+                Información General
+            </h2>
+            <div class="privacy-content">
+                <p>En Merge Fairytale Land-EverWorld, accesible desde https://mergefairytaleland.com/, una de nuestras principales prioridades es la privacidad de nuestros visitantes. Este documento de Política de Privacidad contiene los tipos de información que se recopilan y registran en Merge Fairytale Land-EverWorld y cómo los utilizamos.</p>
+                <p>Si tienes preguntas adicionales o necesitas más información sobre nuestra Política de Privacidad, no dudes en contactarnos.</p>
+            </div>
+        </div>
+
+        <div class="privacy-section magic-glow">
+            <h2 class="section-title">
+                <i>📊</i>
+                Archivos de Registro
+            </h2>
+            <div class="privacy-content">
+                <p>Merge Fairytale Land-EverWorld sigue un procedimiento estándar de uso de archivos de registro. Estos archivos registran a los visitantes cuando acceden a sitios web. Todas las empresas de hosting hacen esto como parte de los análisis de los servicios de alojamiento.</p>
+                <p>La información recopilada por los archivos de registro incluye direcciones de protocolo de internet (IP), tipo de navegador, proveedor de servicios de internet (ISP), fecha y hora, páginas de referencia/salida y posiblemente el número de clics. Esta información no está vinculada a ninguna información de identificación personal.</p>
+                <p>El propósito de la recopilación de estos datos es analizar tendencias, administrar el sitio, rastrear el movimiento de los usuarios en el sitio web y recopilar información demográfica.</p>
+                <p>Nuestra Política de Privacidad fue creada con la ayuda del <a href="https://www.privacypolicyonline.com/privacy-policy-generator/">Generador de Políticas de Privacidad</a>.</p>
+            </div>
+        </div>
+        <div class="privacy-section magic-glow">
+            <h2 class="section-title">
+                <i>🍪</i>
+                Cookies y Balizas Web
+            </h2>
+            <div class="privacy-content">
+                <p>Como cualquier otro sitio web, Merge Fairytale Land-EverWorld utiliza "cookies". Estas cookies se utilizan para almacenar información, incluyendo las preferencias de los visitantes y las páginas del sitio web a las que accedieron o visitaron. La información se usa para optimizar la experiencia de los usuarios personalizando el contenido de nuestras páginas web en función del tipo de navegador y/u otra información.</p>
+                <p>Para obtener más información general sobre las cookies, lee <a href="https://www.privacypolicyonline.com/what-are-cookies/">el artículo sobre "Cookies" del Generador de Políticas de Privacidad</a>.</p>
+            </div>
+        </div>
+
+        <div class="privacy-section magic-glow">
+            <h2 class="section-title">
+                <i>🔍</i>
+                Cookie DART de Google DoubleClick
+            </h2>
+            <div class="privacy-content">
+                <p>Google es uno de los proveedores de terceros en nuestro sitio. También utiliza cookies, conocidas como cookies DART, para mostrar anuncios a nuestros visitantes según su visita a https://mergefairytaleland.com/ y otros sitios en internet.</p>
+                <p>Sin embargo, los visitantes pueden optar por rechazar el uso de cookies DART visitando la Política de Privacidad de la red de anuncios y contenido de Google en el siguiente enlace: <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></p>
+            </div>
+        </div>
+
+        <div class="privacy-section magic-glow">
+            <h2 class="section-title">
+                <i>🤝</i>
+                Nuestros Socios Publicitarios
+            </h2>
+            <div class="privacy-content">
+                <p>Algunos de los anunciantes en nuestro sitio pueden usar cookies y balizas web. Nuestros socios publicitarios están listados a continuación. Cada uno de nuestros socios publicitarios tiene su propia Política de Privacidad para sus prácticas de datos. Para facilitar el acceso, hemos colocado enlaces a sus Políticas de Privacidad:</p>
+                <p>Google<br>
+                    <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="privacy-section magic-glow">
+            <h2 class="section-title">
+                <i>🔒</i>
+                Políticas de Privacidad de Terceros
+            </h2>
+            <div class="privacy-content">
+                <p>La Política de Privacidad de Merge Fairytale Land-EverWorld no se aplica a otros anunciantes o sitios web. Por lo tanto, te recomendamos que consultes las respectivas Políticas de Privacidad de estos servidores de anuncios de terceros para obtener información más detallada. Puede incluir sus prácticas e instrucciones sobre cómo optar por no participar en ciertas opciones.</p>
+                <p>Puedes optar por deshabilitar las cookies a través de las opciones de tu navegador. Para obtener información más detallada sobre la gestión de cookies en navegadores específicos, visita los sitios web oficiales de los respectivos navegadores.</p>
+            </div>
+        </div>
+        <div class="privacy-section magic-glow">
+            <h2 class="section-title">
+                <i>👧</i>
+                Información para Niños
+            </h2>
+            <div class="privacy-content">
+                <p>Otra parte de nuestra prioridad es agregar protección para los niños mientras usan internet. Animamos a los padres y tutores a observar, participar y/o monitorear y guiar su actividad en línea.</p>
+                <p>Merge Fairytale Land-EverWorld no recopila conscientemente ninguna información de identificación personal de niños menores de 13 años. Si crees que tu hijo ha proporcionado este tipo de información en nuestro sitio web, te recomendamos que nos contactes de inmediato y haremos todo lo posible para eliminar dicha información de nuestros registros.</p>
+            </div>
+        </div>
+
+        <div class="privacy-section magic-glow">
+            <h2 class="section-title">
+                <i>💻</i>
+                Política de Privacidad en Línea Únicamente
+            </h2>
+            <div class="privacy-content">
+                <p>Esta Política de Privacidad se aplica solo a nuestras actividades en línea y es válida para los visitantes de nuestro sitio web con respecto a la información que comparten y/o recopilan en Merge Fairytale Land-EverWorld. Esta política no se aplica a ninguna información recopilada fuera de línea o a través de otros canales que no sean este sitio web.</p>
+            </div>
+        </div>
+
+        <div class="privacy-section magic-glow">
+            <h2 class="section-title">
+                <i>✅</i>
+                Consentimiento
+            </h2>
+            <div class="privacy-content">
+                <p>Al usar nuestro sitio web, aceptas nuestra Política de Privacidad y aceptas sus términos y condiciones.</p>
+            </div>
+        </div>
+
+        <div class="privacy-footer">
+            <p>Última actualización: Marzo 2025</p>
+            <a href="/" class="back-button">Volver a la página principal</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#00939c] text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <a href="/" class="flex items-center space-x-3">
+                        <img src="/src/icons/logo.png" alt="Logo de Merge Fairytale Land" class="h-12 w-12 rounded-full object-cover">
+                        <span class="text-xl font-bold">Merge Fairytale Land-EverWorld</span>
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="/Policy356/" class="hover:text-[#ff798a] transition-colors">Política de Privacidad</a>
+                    <a href="/Service347/" class="hover:text-[#ff798a] transition-colors">Términos de Uso</a>
+                    <a href="/Cookie992/" class="hover:text-[#ff798a] transition-colors">Política de Cookies</a>
+                    <a href="/contacto/" class="hover:text-[#ff798a] transition-colors">Contacto</a>
+                    <a href="/About-us/" class="hover:text-[#ff798a] transition-colors">Sobre nosotros</a>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-sm">Para todas las edades (3+). Adecuado para niños y adultos.</p>
+                <p class="mt-2">© 2025 Merge Fairytale Land-EverWorld. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for mobile menu -->
+    <script>
+        // Add magic hover effect to cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,121,138,0.1) 0%, rgba(0,147,156,0.05) 50%, rgba(255,255,255,0) 70%)`;
+            });
+
+            card.addEventListener('mouseleave', function() {
+                card.style.background = 'white';
+            });
+        });
+    </script>
+
+    <?php include '../cookie-consent.php'; ?>
+</body>
+
+</html>

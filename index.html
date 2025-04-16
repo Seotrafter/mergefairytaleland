@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Fairytale Land-EverWorld | El mundo mágico de fusión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel='icon' href='/src/icons/logo.png' type='image/x-icon'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .magic-glow {
+            box-shadow: 0 0 15px rgba(0, 147, 156, 0.5), 0 0 30px rgba(255, 121, 138, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .magic-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 147, 156, 0.7), 0 0 40px rgba(255, 121, 138, 0.5);
+            transform: translateY(-3px);
+        }
+
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            filter: brightness(110%);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #ff798a;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                z-index: 50;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white bg-opacity-95 shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <!-- Logo and site name -->
+                <a href="/" class="flex items-center space-x-3">
+                    <img src="/src/icons/logo.png" alt="Logo de Merge Fairytale Land" class="h-12 w-12 rounded-full object-cover magic-glow">
+                    <span class="text-xl font-bold text-[#00939c] hidden md:block">Merge Fairytale Land-EverWorld</span>
+                    <span class="text-xl font-bold text-[#00939c] block md:hidden">MFL-EverWorld</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Inicio</a>
+                    <a href="#sobre-juego" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Sobre el Juego</a>
+                    <a href="#caracteristicas" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Características</a>
+                    <a href="#gameplay" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Gameplay</a>
+                    <a href="#galeria" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Galería</a>
+                    <a href="#descargar" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Descargar</a>
+                    <a href="/About-us/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Sobre nosotros</a>
+                    <a href="/contacto/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Contacto</a>
+                </div>
+
+
+        </div>
+        </nav>
+
+
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-24 hero-pattern bg-gradient-to-b from-[#ff798a]/10 to-white relative overflow-hidden">
+        <div class="container mx-auto px-4 py-20 flex flex-col items-center justify-center text-center">
+            <div class="absolute top-0 left-0 w-full h-full bg-white opacity-60 z-0"></div>
+            <div class="z-10">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#00939c] to-[#ff798a]">Merge Fairytale Land-EverWorld</h1>
+                <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-700 font-light">Un mundo mágico donde los cuentos de hadas cobran vida. Fusiona, construye y descubre un universo encantado de fantasía y misterio.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#descargar" class="btn-hover py-3 px-8 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white text-lg font-semibold shadow-lg">Descargar Ahora ✨</a>
+                    <a href="#sobre-juego" class="btn-hover py-3 px-8 border-2 border-[#00939c] rounded-full text-[#00939c] text-lg font-semibold hover:bg-[#00939c]/10">Conoce Más 🧚</a>
+                </div>
+            </div>
+            <div class="mt-12 relative magic-glow">
+                <img src="/src/img/hero.png" alt="Merge Fairytale Land-EverWorld" class="rounded-xl shadow-xl max-w-full h-auto">
+                <div class="absolute -bottom-3 -right-3 bg-white rounded-full p-2 shadow-lg">
+                    <div class="bg-gradient-to-r from-[#00939c] to-[#ff798a] text-white font-bold rounded-full py-1 px-3 text-sm">
+                        4.8 ⭐
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 text-gray-600">
+                <p>+100.000 descargas | Para todas las edades (3+)</p>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent"></div>
+    </section>
+
+    <!-- About Game Section -->
+    <section id="sobre-juego" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#00939c]">Un Mundo de Fantasía por Descubrir</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Sumérgete en un universo mágico donde los cuentos de hadas toman vida.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <img src="/src/img/about.png" alt="Mundo mágico de Merge Fairytale Land" class="rounded-2xl shadow-xl w-full h-auto magic-glow">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-3xl font-bold mb-6 text-[#ff798a]">El Encanto de los Cuentos de Hadas</h3>
+                    <p class="text-xl text-gray-700 mb-6 font-light leading-relaxed">
+                        Los cuentos de hadas son la encarnación de la verdad, la bondad y la belleza; son la materialización de los coloridos sueños infantiles. <span class="font-medium text-[#00939c]">"Merge Fairytale Land"</span> es un mundo de cuento hermoso, soñador, interesante y feliz.
+                    </p>
+                    <p class="text-xl text-gray-700 mb-6 font-light leading-relaxed">
+                        Con cada descubrimiento, se vuelve más grande y hermoso. ¡Ven a jugar este rompecabezas de fusión parcial, de creación parcial de un mundo, como en un cuento de hadas!
+                    </p>
+                    <div class="bg-gradient-to-r from-[#00939c]/10 to-[#ff798a]/10 p-6 rounded-xl">
+                        <p class="text-xl text-gray-800 font-medium italic">
+                            "Invoca a los personajes más mágicos del mundo de los cuentos de hadas. Te están esperando para que nades en su mundo fantástico y disfrutes de experiencias maravillosas."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="caracteristicas" class="py-20 bg-gradient-to-b from-white to-[#00939c]/10">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#ff798a]">Características Mágicas</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Descubre todas las maravillas que te esperan en Merge Fairytale Land-EverWorld.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border-2 border-[#00939c]/20 relative">
+                    <div class="absolute top-4 right-4 text-3xl">⭐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#00939c]">¡Tu Mundo, Tu Estrategia!</h3>
+                    <p class="text-gray-700 text-lg font-light">
+                        Arrastra, fusiona, combina y organiza piezas de rompecabezas como necesites en un tablero de juego ampliamente abierto. Desarrolla tu propio estilo y estrategia para crear un mundo único.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border-2 border-[#ff798a]/20 relative">
+                    <div class="absolute top-4 right-4 text-3xl">⭐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#ff798a]">¡Conviértete en Maestro de la Fusión!</h3>
+                    <p class="text-gray-700 text-lg font-light">
+                        Constantemente aparecen nuevos elementos esperando a ser recogidos, fusionados, combinados y construidos. Desbloquea poderes mágicos y descubre nuevas combinaciones.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border-2 border-[#00939c]/20 relative">
+                    <div class="absolute top-4 right-4 text-3xl">⭐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#00939c]">¡Crea tu Colección!</h3>
+                    <p class="text-gray-700 text-lg font-light">
+                        Combina y fusiona para construir castillos, descubrir y coleccionar personajes mitológicos clásicos y edificios olímpicos. Cada fusión te acerca más a completar tu colección.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border-2 border-[#ff798a]/20 relative">
+                    <div class="absolute top-4 right-4 text-3xl">⭐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#ff798a]">¡Más Cristales Mágicos!</h3>
+                    <p class="text-gray-700 text-lg font-light">
+                        ¿Falta de recursos? ¡Extrae minerales, madera y mucho más! Recolecta recursos mágicos para expandir tu reino y desbloquear nuevas áreas de juego.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border-2 border-[#00939c]/20 relative">
+                    <div class="absolute top-4 right-4 text-3xl">⭐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#00939c]">¡Tesoros Mágicos Esperando!</h3>
+                    <p class="text-gray-700 text-lg font-light">
+                        Recolecta gemas preciosas, valiosas monedas de oro, la misteriosa varita de Atenea y el poderoso martillo de Zeus para ayudar a expandir tu propio mundo mítico.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white rounded-xl p-6 shadow-lg border-2 border-[#ff798a]/20 relative">
+                    <div class="absolute top-4 right-4 text-3xl">⭐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#ff798a]">¡Más por Descubrir!</h3>
+                    <p class="text-gray-700 text-lg font-light">
+                        Participa en misiones diarias de recolección de monedas para acumular monedas y gemas, o completa los pedidos necesarios para tu personaje y recibe recompensas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 flex justify-center">
+                <a href="#descargar" class="btn-hover py-3 px-8 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white text-lg font-semibold shadow-lg">Descubre Todas las Características ✨</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Section -->
+    <section id="gameplay" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#00939c]">La Magia del Gameplay</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Sumérgete en una experiencia de juego única que combina estrategia, creatividad y fantasía.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center gap-10">
+                <div class="lg:w-1/2 order-2 lg:order-1">
+                    <h3 class="text-3xl font-bold mb-6 text-[#ff798a]">La Historia de Blancanieves</h3>
+                    <p class="text-xl text-gray-700 mb-6 font-light leading-relaxed">
+                        Blancanieves nació en una familia real, noble y elegante, digna de envidia; pero cuando era joven, su madre murió, el rey la ignoró y la nueva madre era indiferente y celosa, lo que generó compasión en la gente.
+                    </p>
+                    <p class="text-xl text-gray-700 mb-6 font-light leading-relaxed">
+                        Era naturalmente hermosa, bella y bondadosa, y muchas personas la amaban; pero enfrentarse a una reina "orgullosa, arrogante y envidiosa de la belleza de los demás" era muy angustiante.
+                    </p>
+                    <div class="bg-gradient-to-r from-[#00939c]/10 to-[#ff798a]/10 p-6 rounded-xl mb-6">
+                        <p class="text-xl text-gray-800 font-medium">
+                            Después de comer la manzana envenenada, Blancanieves fue salvada por un príncipe que apareció posteriormente. Finalmente, el príncipe y la princesa vivieron felices juntos, y la reina recibió su merecido castigo.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-[#00939c]/10 py-2 px-4 rounded-full text-[#00939c] font-medium">🏰 Construye Castillos</div>
+                        <div class="bg-[#ff798a]/10 py-2 px-4 rounded-full text-[#ff798a] font-medium">🧚 Conoce Personajes</div>
+                        <div class="bg-[#00939c]/10 py-2 px-4 rounded-full text-[#00939c] font-medium">💎 Colecciona Tesoros</div>
+                        <div class="bg-[#ff798a]/10 py-2 px-4 rounded-full text-[#ff798a] font-medium">🌟 Desbloquea Poderes</div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 order-1 lg:order-2">
+                    <div class="grid grid-cols-1 gap-4">
+                        <img src="/src/img/gameplay1.png" alt="Gameplay 1" class="rounded-2xl shadow-xl w-[70%] h-auto magic-glow">
+                        <img src="/src/img/gameplay2.png" alt="Gameplay 2" class="rounded-2xl shadow-xl w-[70%] h-auto magic-glow mt-8">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-20 bg-gradient-to-b from-white to-[#ff798a]/10">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#ff798a]">Galería de Maravillas</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explora el fascinante mundo visual de Merge Fairytale Land-EverWorld.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-xl shadow-lg magic-glow">
+
+                    <div class="p-4 bg-white">
+                        <h3 class="text-lg font-semibold text-[#00939c]">El Castillo Encantado</h3>
+                        <p class="text-gray-600">Fusiona elementos para construir este majestuoso castillo mágico.</p>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden rounded-xl shadow-lg magic-glow">
+
+                    <div class="p-4 bg-white">
+                        <h3 class="text-lg font-semibold text-[#ff798a]">El Bosque de los Secretos</h3>
+                        <p class="text-gray-600">Descubre personajes ocultos y tesoros en el misterioso bosque.</p>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden rounded-xl shadow-lg magic-glow">
+
+                    <div class="p-4 bg-white">
+                        <h3 class="text-lg font-semibold text-[#00939c]">La Torre de Cristal</h3>
+                        <p class="text-gray-600">Combina elementos mágicos para crear esta impresionante torre.</p>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden rounded-xl shadow-lg magic-glow">
+
+                    <div class="p-4 bg-white">
+                        <h3 class="text-lg font-semibold text-[#ff798a]">El Palacio de Blancanieves</h3>
+                        <p class="text-gray-600">Reconstruye el hogar de Blancanieves y sus amigos.</p>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden rounded-xl shadow-lg magic-glow">
+
+                    <div class="p-4 bg-white">
+                        <h3 class="text-lg font-semibold text-[#00939c]">El Jardín Encantado</h3>
+                        <p class="text-gray-600">Cultiva plantas mágicas y flores que otorgan poderes especiales.</p>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden rounded-xl shadow-lg magic-glow">
+
+                    <div class="p-4 bg-white">
+                        <h3 class="text-lg font-semibold text-[#ff798a]">La Mina de Gemas</h3>
+                        <p class="text-gray-600">Extrae recursos valiosos para expandir tu reino mágico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-xl text-gray-700 mb-6 italic">
+                    "Cada fusión revela nuevas maravillas y secretos por descubrir en este fascinante mundo de fantasía."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="descargar" class="py-20 bg-gradient-to-b from-[#ff798a]/10 to-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="relative z-10 max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden magic-glow">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#00939c]/5 to-[#ff798a]/5"></div>
+                <div class="relative p-8 md:p-12">
+                    <div class="flex flex-col md:flex-row items-center gap-10">
+                        <div class="md:w-1/2">
+                            <h2 class="text-4xl font-bold mb-4 text-[#00939c]">¡Descarga Ahora!</h2>
+                            <p class="text-xl text-gray-700 mb-6 font-light">
+                                Sumérgete en el fascinante mundo de fusión de cuentos de hadas. ¡Más de 100,000 jugadores ya están disfrutando de la magia!
+                            </p>
+                            <div class="mb-6">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <div class="flex">
+                                        <span class="text-yellow-400 text-2xl">★</span>
+                                        <span class="text-yellow-400 text-2xl">★</span>
+                                        <span class="text-yellow-400 text-2xl">★</span>
+                                        <span class="text-yellow-400 text-2xl">★</span>
+                                        <span class="text-yellow-400 text-2xl">★</span>
+                                    </div>
+                                    <span class="text-gray-700 font-bold">4.8/5</span>
+                                </div>
+                                <p class="text-gray-600">Basado en más de 4,240 reseñas</p>
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+
+                                <a href="https://play.google.com/store/apps/details?id=com.wellgame.mergefairytale&pcampaignid=web_share" target="_blank" class="btn-hover flex items-center justify-center gap-2 py-3 px-6 bg-black rounded-xl text-white text-lg font-semibold shadow-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M3.88986 7.67C3.65986 7.93 3.49986 8.34 3.49986 8.84V15.17C3.49986 15.67 3.65986 16.08 3.89986 16.33L3.94986 16.38L9.99986 10.33V10.32L3.88986 7.67Z" />
+                                        <path d="M12.7999 13.13L9.99986 10.33V10.32L12.7999 7.52L12.8599 7.55L16.2499 9.39C17.1999 9.89 17.1999 10.74 16.2499 11.24L12.8599 13.08L12.7999 13.13Z" />
+                                        <path d="M12.8598 13.08L9.99976 10.33L3.88977 16.33C4.19977 16.66 4.71976 16.7 5.27976 16.37L12.8598 13.08" />
+                                        <path d="M12.8598 7.56L5.27976 4.27C4.71976 3.94 4.19977 3.98 3.88977 4.31L9.99976 10.32L12.8598 7.56Z" />
+                                    </svg>
+                                    Google Play
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 relative">
+                            <img src="/src/img/download.png" alt="Aplicación Merge Fairytale Land-EverWorld" class="mx-auto h-auto max-h-96 rounded-xl shadow-lg">
+                            <div class="absolute -bottom-4 -right-4 bg-gradient-to-r from-[#00939c] to-[#ff798a] text-white font-bold rounded-full py-2 px-4">
+                                ¡Gratis!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-[#ff798a]">¿Qué dicen nuestros jugadores?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex text-yellow-400 mb-2">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <p class="text-gray-700 italic">"¡Increíble juego! Me encanta fusionar elementos y descubrir nuevos personajes. ¡Altamente adictivo!"</p>
+                        <p class="mt-4 font-semibold text-[#00939c]">Martina S.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex text-yellow-400 mb-2">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <p class="text-gray-700 italic">"Los gráficos son hermosos y la jugabilidad es muy intuitiva. ¡No puedo parar de jugar!"</p>
+                        <p class="mt-4 font-semibold text-[#00939c]">Carlos M.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex text-yellow-400 mb-2">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <p class="text-gray-700 italic">"Una combinación perfecta de estrategia y diversión. Mis hijos y yo jugamos juntos todos los días."</p>
+                        <p class="mt-4 font-semibold text-[#00939c]">Valentina R.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#00939c] text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <a href="/" class="flex items-center space-x-3">
+                        <img src="/src/icons/logo.png" alt="Logo de Merge Fairytale Land" class="h-12 w-12 rounded-full object-cover">
+                        <span class="text-xl font-bold">Merge Fairytale Land-EverWorld</span>
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="/Policy356/" class="hover:text-[#ff798a] transition-colors">Política de Privacidad</a>
+                    <a href="/Service347/" class="hover:text-[#ff798a] transition-colors">Términos de Uso</a>
+                    <a href="/Cookie992/" class="hover:text-[#ff798a] transition-colors">Política de Cookies</a>
+                    <a href="/contacto/" class="hover:text-[#ff798a] transition-colors">Contacto</a>
+                    <a href="/About-us/" class="hover:text-[#ff798a] transition-colors">Sobre nosotros</a>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-sm">Para todas las edades (3+). Adecuado para niños y adultos.</p>
+                <p class="mt-2">© 2025 Merge Fairytale Land-EverWorld. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for mobile menu -->
+    <script>
+        // Add magic hover effect to cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,121,138,0.1) 0%, rgba(0,147,156,0.05) 50%, rgba(255,255,255,0) 70%)`;
+            });
+
+            card.addEventListener('mouseleave', function() {
+                card.style.background = 'white';
+            });
+        });
+    </script>
+
+    <?php include 'cookie-consent.php'; ?>
+</body>
+
+</html>

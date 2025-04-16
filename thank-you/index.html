@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>¡Gracias por tu mensaje! | Merge Fairytale Land-EverWorld</title>
+    <script src='https://cdn.tailwindcss.com'></script>
+    <link rel='icon' href='/src/icons/logo.png' type='image/x-icon'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        .magic-glow {
+            box-shadow: 0 0 15px rgba(0, 147, 156, 0.5), 0 0 30px rgba(255, 121, 138, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .magic-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 147, 156, 0.7), 0 0 40px rgba(255, 121, 138, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .thank-you-gradient {
+            background: linear-gradient(135deg, rgba(0, 147, 156, 0.05) 0%, rgba(255, 121, 138, 0.05) 100%);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #fff 10%, transparent 60%);
+            animation: sparkle 3s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            filter: brightness(110%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #00939c, #ff798a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='thank-you-gradient min-h-screen flex flex-col items-center justify-center p-4 py-20 relative overflow-hidden'>
+        <!-- Sparkles/Magic Elements -->
+        <div class='sparkle' style='top: 10%; left: 10%; animation-delay: 0s;'></div>
+        <div class='sparkle' style='top: 20%; right: 15%; animation-delay: 0.3s;'></div>
+        <div class='sparkle' style='top: 70%; left: 20%; animation-delay: 0.5s;'></div>
+        <div class='sparkle' style='top: 80%; right: 25%; animation-delay: 0.7s;'></div>
+        <div class='sparkle' style='top: 40%; left: 80%; animation-delay: 1s;'></div>
+        <div class='sparkle' style='top: 60%; right: 70%; animation-delay: 1.2s;'></div>
+
+        <!-- Content -->
+        <div class='max-w-3xl w-full bg-white rounded-3xl p-8 md:p-12 shadow-xl magic-glow relative z-10'>
+            <!-- Icon -->
+            <div class='flex justify-center mb-8'>
+                <div class='floating w-24 h-24 rounded-full bg-gradient-to-r from-[#00939c] to-[#ff798a] flex items-center justify-center text-white text-4xl'>
+                    ✓
+                </div>
+            </div>
+
+            <!-- Message -->
+            <h1 class='text-4xl md:text-5xl font-bold text-center mb-6 gradient-text'>¡Gracias por contactarnos!</h1>
+
+            <div class='text-center mb-10'>
+                <p class='text-xl text-gray-700 mb-4'>Hemos recibido tu mensaje correctamente.</p>
+                <p class='text-lg text-gray-600 mb-6'>Nuestro equipo revisará tu solicitud y te responderá lo antes posible al correo electrónico que has proporcionado. Normalmente respondemos dentro de las próximas 24-48 horas hábiles.</p>
+                <p class='text-lg text-gray-600 pulse'>Mientras tanto, puedes seguir explorando el mágico mundo de Merge Fairytale Land-EverWorld.</p>
+            </div>
+
+            <div class='flex flex-col sm:flex-row justify-center gap-4'>
+                <a href='/' class='btn-hover py-3 px-8 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white text-lg font-semibold shadow-lg text-center'>Volver a la página principal ✨</a>
+                <a href='/' class='btn-hover py-3 px-8 border-2 border-[#00939c] rounded-full text-[#00939c] text-lg font-semibold hover:bg-[#00939c]/10 text-center'>Descargar el juego 🎮</a>
+            </div>
+        </div>
+
+
+
+        <!-- Footer -->
+        <div class='mt-10 text-center text-gray-500'>
+            <p>&copy; 2025 Merge Fairytale Land-EverWorld. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</body>
+
+</html>

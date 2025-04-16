@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Fairytale Land-EverWorld | El mundo mágico de fusión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel='icon' href='/src/icons/logo.png' type='image/x-icon'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .magic-glow {
+            box-shadow: 0 0 15px rgba(0, 147, 156, 0.5), 0 0 30px rgba(255, 121, 138, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .magic-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 147, 156, 0.7), 0 0 40px rgba(255, 121, 138, 0.5);
+            transform: translateY(-3px);
+        }
+
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            filter: brightness(110%);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #ff798a;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+
+
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                z-index: 50;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white bg-opacity-95 shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <!-- Logo and site name -->
+                <a href="/" class="flex items-center space-x-3">
+                    <img src="/src/icons/logo.png" alt="Logo de Merge Fairytale Land" class="h-12 w-12 rounded-full object-cover magic-glow">
+                    <span class="text-xl font-bold text-[#00939c] hidden md:block">Merge Fairytale Land-EverWorld</span>
+                    <span class="text-xl font-bold text-[#00939c] block md:hidden">MFL-EverWorld</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Inicio</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Sobre el Juego</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Características</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Gameplay</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Galería</a>
+                    <a href="/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Descargar</a>
+                    <a href="/About-us/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Sobre nosotros</a>
+                    <a href="/contacto/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Contacto</a>
+                </div>
+
+
+
+            </nav>
+
+
+        </div>
+    </header>
+    <style>
+        /* Estilos generales */
+        .about-container {
+            font-family: 'Quicksand', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #333;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 6rem;
+        }
+
+        .about-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #00939c, #ff798a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .about-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .about-section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #00939c;
+        }
+
+        .about-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section:nth-child(even) {
+            border-left: 4px solid #ff798a;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #00939c;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .about-section:nth-child(even) .section-title {
+            color: #ff798a;
+        }
+
+        .section-title i {
+            font-size: 1.5rem;
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-avatar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 3px #00939c;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-member:hover .member-avatar::after {
+            opacity: 1;
+        }
+
+        .member-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #00939c;
+        }
+
+        .member-role {
+            font-size: 1rem;
+            color: #ff798a;
+            margin-bottom: 0.75rem;
+        }
+
+        .member-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, #00939c, #ff798a);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(to right, #00939c, #ff798a);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: #ff798a;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00939c;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .about-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(to right, #00939c, #ff798a);
+            color: white;
+            font-weight: 600;
+            border-radius: 30px;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .magic-glow {
+            box-shadow: 0 0 15px rgba(0, 147, 156, 0.3), 0 0 30px rgba(255, 121, 138, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .about-title {
+                font-size: 2.2rem;
+            }
+
+            .about-section {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .about-content {
+                font-size: 1rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 85%;
+                left: 55px !important;
+            }
+
+            .timeline-item::after {
+                left: -34px !important;
+            }
+        }
+    </style>
+
+    <section class="about-container">
+        <div class="about-header">
+            <h1 class="about-title">Sobre los Desarrolladores</h1>
+            <p class="about-subtitle">Conoce al apasionado equipo detrás de Merge Fairytale Land-EverWorld, un grupo de soñadores que crearon un mundo mágico para inspirar la imaginación de niños en todo el mundo.</p>
+        </div>
+
+        <div class="about-section magic-glow">
+            <h2 class="section-title">
+                <i>👨‍👩‍👧‍👦</i>
+                Nuestro Equipo
+            </h2>
+            <div class="about-content">
+                <p>Somos un pequeño equipo de desarrolladores apasionados que compartimos un sueño común: crear algo único que pudiera traer alegría a los niños de todo el mundo. Lo que comenzó como un proyecto entre amigos se ha convertido en un viaje mágico que nos ha permitido combinar nuestra pasión por los cuentos de hadas, los juegos y la tecnología.</p>
+                <p>Cada miembro de nuestro equipo aporta una perspectiva única y habilidades especiales, desde diseñadores gráficos que dan vida a los personajes, hasta programadores que construyen los mecanismos del juego, y narradores que tejen las historias encantadoras que forman el corazón de Merge Fairytale Land-EverWorld.</p>
+                <div class="team-grid">
+                    <div class="team-member">
+
+                        <h3 class="member-name">Ana Rodríguez</h3>
+                        <p class="member-role">Directora Creativa</p>
+                        <p class="member-description">Fanática de los cuentos de hadas desde pequeña, Ana combina su amor por la fantasía con una visión artística única que da forma al mundo visual de nuestro juego.</p>
+                    </div>
+
+                    <div class="team-member">
+
+                        <h3 class="member-name">Miguel Sánchez</h3>
+                        <p class="member-role">Desarrollador Principal</p>
+                        <p class="member-description">Con más de 10 años de experiencia en desarrollo de juegos, Miguel lidera nuestro equipo técnico para crear una experiencia de juego fluida y envolvente.</p>
+                    </div>
+
+                    <div class="team-member">
+
+                        <h3 class="member-name">Lucía Fernández</h3>
+                        <p class="member-role">Diseñadora de Personajes</p>
+                        <p class="member-description">Las creaciones de Lucía dan vida a los personajes más queridos de los cuentos clásicos con un estilo encantador que cautiva a jugadores de todas las edades.</p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section magic-glow">
+            <h2 class="section-title">
+                <i>📜</i>
+                Nuestra Historia
+            </h2>
+            <div class="about-content">
+                <p>La historia de Merge Fairytale Land-EverWorld comenzó en una pequeña oficina compartida, donde un grupo de amigos con grandes sueños decidió embarcarse en un viaje para crear algo especial. Unidos por nuestro amor por los cuentos de hadas y los juegos educativos, queríamos diseñar una experiencia que no solo entretuviera a los niños, sino que también estimulara su imaginación y creatividad.</p>
+                <p>Nos inspiramos en los cuentos clásicos que marcaron nuestra infancia, pero queríamos darles un giro fresco y moderno. Después de meses de lluvia de ideas, prototipos y muchas noches sin dormir, nació nuestro concepto de un mundo de fusión de cuentos de hadas, donde los jugadores pudieran construir y expandir su propio universo mágico.</p>
+                <p>El camino no siempre fue fácil. Como equipo pequeño e independiente, enfrentamos numerosos desafíos técnicos y financieros. Pero la pasión por nuestro proyecto y la visión de traer alegría a los niños nos mantuvo motivados incluso en los momentos más difíciles.</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <p class="timeline-date">Enero 2022</p>
+                        <h3 class="timeline-title">El Nacimiento de una Idea</h3>
+                        <p class="timeline-content">Cuatro amigos con pasión por los juegos y los cuentos de hadas se reunieron para crear un concepto único que combinara ambos mundos.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <p class="timeline-date">Junio 2022</p>
+                        <h3 class="timeline-title">Primer Prototipo</h3>
+                        <p class="timeline-content">Después de meses de desarrollo, creamos el primer prototipo jugable de Merge Fairytale Land.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <p class="timeline-date">Septiembre 2022</p>
+                        <h3 class="timeline-title">Fase de Pruebas</h3>
+                        <p class="timeline-content">Invitamos a un grupo selecto de jugadores para probar nuestro juego y recibir comentarios valiosos que nos ayudaron a mejorar.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <p class="timeline-date">Febrero 2023</p>
+                        <h3 class="timeline-title">Expansión del Equipo</h3>
+                        <p class="timeline-content">Con el proyecto creciendo, incorporamos nuevos talentos a nuestro equipo para enriquecer el juego con más contenido y funcionalidades.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <p class="timeline-date">Julio 2023</p>
+                        <h3 class="timeline-title">Lanzamiento Oficial</h3>
+                        <p class="timeline-content">Finalmente lanzamos Merge Fairytale Land en tiendas de aplicaciones, viendo con emoción cómo nuestro sueño se convertía en realidad.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <p class="timeline-date">Enero 2024</p>
+                        <h3 class="timeline-title">Expansión EverWorld</h3>
+                        <p class="timeline-content">Tras el éxito inicial, lanzamos la gran expansión "EverWorld" que introdujo nuevos personajes, reinos y mecánicas de juego.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section magic-glow">
+            <h2 class="section-title">
+                <i>💫</i>
+                Nuestra Filosofía
+            </h2>
+            <div class="about-content">
+                <p>En el corazón de todo lo que hacemos está nuestra creencia en el poder transformador de la imaginación. Creemos firmemente que los juegos pueden ser tanto divertidos como educativos, y nos esforzamos por crear experiencias que fomenten la creatividad, el pensamiento lógico y el amor por la lectura entre los más pequeños.</p>
+                <p>Para nosotros, cada característica de Merge Fairytale Land-EverWorld es una oportunidad para inspirar. Cuando un niño combina elementos para descubrir un nuevo personaje o construye parte de un reino mágico, está aprendiendo sobre causa y efecto, resolución de problemas y el valor de la perseverancia, todo mientras se divierte en un entorno seguro y positivo.</p>
+                <p>También nos comprometemos a crear un juego que sea accesible para todos. Esto significa no solo asegurar que el juego sea intuitivo y fácil de aprender, sino también garantizar que sea un espacio inclusivo donde niños de diferentes edades, habilidades y trasfondos culturales puedan sentirse representados y bienvenidos.</p>
+                <p>Mirando hacia el futuro, nuestro objetivo es seguir expandiendo el universo de Merge Fairytale Land-EverWorld con nuevas historias, personajes y mecánicas que mantengan viva la magia. Estamos profundamente agradecidos por la comunidad de jugadores que ha adoptado nuestro juego y nos inspira a seguir soñando en grande.</p>
+            </div>
+        </div>
+
+        <div class="about-footer">
+            <p>Gracias por formar parte de nuestro viaje mágico</p>
+            <a href="/" class="back-button">Volver a la página principal</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#00939c] text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <a href="/" class="flex items-center space-x-3">
+                        <img src="/src/icons/logo.png" alt="Logo de Merge Fairytale Land" class="h-12 w-12 rounded-full object-cover">
+                        <span class="text-xl font-bold">Merge Fairytale Land-EverWorld</span>
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="/Policy356/" class="hover:text-[#ff798a] transition-colors">Política de Privacidad</a>
+                    <a href="/Service347/" class="hover:text-[#ff798a] transition-colors">Términos de Uso</a>
+                    <a href="/Cookie992/" class="hover:text-[#ff798a] transition-colors">Política de Cookies</a>
+                    <a href="/contacto/" class="hover:text-[#ff798a] transition-colors">Contacto</a>
+                    <a href="/About-us/" class="hover:text-[#ff798a] transition-colors">Sobre nosotros</a>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-sm">Para todas las edades (3+). Adecuado para niños y adultos.</p>
+                <p class="mt-2">© 2025 Merge Fairytale Land-EverWorld. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for mobile menu -->
+    <script>
+        // Add magic hover effect to cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,121,138,0.1) 0%, rgba(0,147,156,0.05) 50%, rgba(255,255,255,0) 70%)`;
+            });
+
+            card.addEventListener('mouseleave', function() {
+                card.style.background = 'white';
+            });
+        });
+    </script>
+
+    <?php include '../cookie-consent.php'; ?>
+</body>
+
+</html>

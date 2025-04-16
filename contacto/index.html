@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Fairytale Land-EverWorld | El mundo mágico de fusión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel='icon' href='/src/icons/logo.png' type='image/x-icon'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .magic-glow {
+            box-shadow: 0 0 15px rgba(0, 147, 156, 0.5), 0 0 30px rgba(255, 121, 138, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .magic-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 147, 156, 0.7), 0 0 40px rgba(255, 121, 138, 0.5);
+            transform: translateY(-3px);
+        }
+
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            filter: brightness(110%);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #ff798a;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+
+
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                z-index: 50;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white bg-opacity-95 shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <!-- Logo and site name -->
+                <a href="/" class="flex items-center space-x-3">
+                    <img src="/src/icons/logo.png" alt="Logo de Merge Fairytale Land" class="h-12 w-12 rounded-full object-cover magic-glow">
+                    <span class="text-xl font-bold text-[#00939c] hidden md:block">Merge Fairytale Land-EverWorld</span>
+                    <span class="text-xl font-bold text-[#00939c] block md:hidden">MFL-EverWorld</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Inicio</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Sobre el Juego</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Características</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Gameplay</a>
+                    <a href="/" class="nav-link text-gray-700 hover:text-[#ff798a] font-medium">Galería</a>
+                    <a href="/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Descargar</a>
+                    <a href="/About-us/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Sobre nosotros</a>
+                    <a href="/contacto/" class="btn-hover py-2 px-6 bg-gradient-to-r from-[#00939c] to-[#ff798a] rounded-full text-white font-semibold shadow-lg">Contacto</a>
+                </div>
+
+
+
+            </nav>
+
+
+        </div>
+    </header>
+
+    <style>
+        /* Estilos generales */
+        .contact-container {
+            font-family: 'Quicksand', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #333;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 6rem;
+        }
+
+        .contact-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #00939c, #ff798a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .contact-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-form-container {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .contact-section {
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #00939c;
+        }
+
+        .contact-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section:nth-child(even) {
+            border-left: 4px solid #ff798a;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #00939c;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-section:nth-child(even) .section-title {
+            color: #ff798a;
+        }
+
+        .section-title i {
+            font-size: 1.5rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(to right, #00939c, #ff798a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            flex-grow: 1;
+        }
+
+        .contact-text h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .contact-text p,
+        .contact-text a {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .contact-text a {
+            color: #00939c;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: #ff798a;
+        }
+
+        .contact-text a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #ff798a;
+            transition: width 0.3s;
+        }
+
+        .contact-text a:hover::after {
+            width: 100%;
+        }
+
+        /* Estilos del formulario */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-input,
+        .form-textarea {
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #00939c;
+            box-shadow: 0 0 0 3px rgba(0, 147, 156, 0.2);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-button {
+            align-self: flex-start;
+            padding: 0.75rem 2rem;
+            background: linear-gradient(to right, #00939c, #ff798a);
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-button:active {
+            transform: translateY(-1px);
+        }
+
+        .contact-map {
+            width: 100%;
+            height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(to right, #00939c, #ff798a);
+            color: white;
+            font-weight: 600;
+            border-radius: 30px;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .magic-glow {
+            box-shadow: 0 0 15px rgba(0, 147, 156, 0.3), 0 0 30px rgba(255, 121, 138, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .contact-title {
+                font-size: 2.2rem;
+            }
+
+            .contact-section {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <section class="contact-container">
+        <div class="contact-header">
+            <h1 class="contact-title">Contacto</h1>
+            <p class="contact-subtitle">Si tienes preguntas o comentarios sobre Merge Fairytale Land-EverWorld, no dudes en ponerte en contacto con nosotros. Estaremos encantados de ayudarte.</p>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-section magic-glow">
+                    <h2 class="section-title">
+                        <i>📱</i>
+                        Información de Contacto
+                    </h2>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i>✉️</i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Correo Electrónico</h3>
+                            <a href="mailto:info@mergefairytaleland.com">info@mergefairytaleland.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i>📞</i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Teléfono (Chile)</h3>
+                            <p>+56 2 2123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i>🕙</i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Viernes: 9:00 - 18:00<br>
+                                Sábados: 10:00 - 14:00<br>
+                                Domingos: Cerrado</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106551.15639655422!2d-70.67941255094249!3d-33.45976860799451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5410425af2f%3A0x8475d53c400f0931!2sSantiago%2C%20Chile!5e0!3m2!1ses!2ses!4v1717013450087!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <div class="contact-section magic-glow">
+                    <h2 class="section-title">
+                        <i>✏️</i>
+                        Envíanos un Mensaje
+                    </h2>
+                    <p class="contact-subtitle" style="text-align: left; margin-bottom: 1.5rem;">Si tienes alguna pregunta, sugerencia o comentario, por favor no dudes en contactarnos. Estaremos encantados de escucharte y responderemos a la brevedad posible.</p>
+
+                    <form action="/thank-you/" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nombre completo *</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Asunto *</label>
+                            <select id="subject" name="subject" class="form-input" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="consulta">Consulta general</option>
+                                <option value="soporte">Soporte técnico</option>
+                                <option value="sugerencia">Sugerencia</option>
+                                <option value="colaboracion">Colaboración</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensaje *</label>
+                            <textarea id="message" name="message" class="form-textarea" required></textarea>
+                        </div>
+
+                        <div class="form-group" style="flex-direction: row; align-items: center; gap: 10px;">
+                            <input type="checkbox" id="privacy" name="privacy" required style="width: 20px; height: 20px;">
+                            <label for="privacy" class="form-label" style="margin-bottom: 0;">
+                                He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a> *
+                            </label>
+                        </div>
+
+                        <button type="submit" class="form-button magic-glow">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="contact-section magic-glow" style="text-align: center;">
+            <h2 class="section-title" style="justify-content: center;">
+                <i>💌</i>
+                Mantente Conectado
+            </h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">
+                ¡Síguenos en redes sociales para estar al día con las últimas novedades, actualizaciones y eventos especiales!
+            </p>
+
+        </div>
+
+        <div class="contact-footer">
+            <p>Gracias por tu interés en Merge Fairytale Land-EverWorld</p>
+            <a href="/" class="back-button">Volver a la página principal</a>
+        </div>
+    </section>
+
+
+
+    <style>
+        /* Estilos adicionales para el FAQ */
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 1rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #00939c;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item h3:hover {
+            color: #ff798a;
+        }
+
+        .faq-item h3::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item h3.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            margin-top: 0.5rem;
+            color: #666;
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+    </style>
+
+    <!-- Footer -->
+    <footer class="bg-[#00939c] text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <a href="/" class="flex items-center space-x-3">
+                        <img src="/src/icons/logo.png" alt="Logo de Merge Fairytale Land" class="h-12 w-12 rounded-full object-cover">
+                        <span class="text-xl font-bold">Merge Fairytale Land-EverWorld</span>
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="/Policy356/" class="hover:text-[#ff798a] transition-colors">Política de Privacidad</a>
+                    <a href="/Service347/" class="hover:text-[#ff798a] transition-colors">Términos de Uso</a>
+                    <a href="/Cookie992/" class="hover:text-[#ff798a] transition-colors">Política de Cookies</a>
+                    <a href="/contacto/" class="hover:text-[#ff798a] transition-colors">Contacto</a>
+                    <a href="/About-us/" class="hover:text-[#ff798a] transition-colors">Sobre nosotros</a>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-sm">Para todas las edades (3+). Adecuado para niños y adultos.</p>
+                <p class="mt-2">© 2025 Merge Fairytale Land-EverWorld. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for mobile menu -->
+    <script>
+        // Add magic hover effect to cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,121,138,0.1) 0%, rgba(0,147,156,0.05) 50%, rgba(255,255,255,0) 70%)`;
+            });
+
+            card.addEventListener('mouseleave', function() {
+                card.style.background = 'white';
+            });
+        });
+    </script>
+
+    <?php include '../cookie-consent.php'; ?>
+</body>
+
+</html>
